@@ -30,15 +30,14 @@ RUN install2.r --error \
     ggthemes \
     gridExtra \
     here \
-    gsl \
-    rtdists \
-    psyphy
+    psyphy \
+    ez \
+    schoRsch \
+    foreach \
+    emmeans \
+    brms
+
 
 RUN R --no-restore \
 --no-save -e \
 'devtools::install_github("crsh/papaja")'
-
-# install brms:
-RUN install2.r --error \
-    --deps TRUE \
-    brms
