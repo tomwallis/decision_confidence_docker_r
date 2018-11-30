@@ -35,8 +35,8 @@ RUN install2.r --error \
     schoRsch \
     foreach \
     emmeans \
-    brms
-
+    brms \
+    tidybayes
 
 RUN R --no-restore \
 --no-save -e \
