@@ -27,6 +27,15 @@ RUN echo "uiPrefs={\"theme\" : \"Solarized Dark\"}" >> \
 
 RUN install2.r --error \
     --deps TRUE \
+    devtools \
+    brms
+
+RUN R --no-restore \
+    --no-save -e \
+    'devtools::install_github("crsh/papaja")'
+
+RUN install2.r --error \
+    --deps TRUE \
     ggthemes \
     gridExtra \
     here \
@@ -34,10 +43,7 @@ RUN install2.r --error \
     ez \
     schoRsch \
     foreach \
-    emmeans \
-    brms \
-    tidybayes
+    emmeans
 
-RUN R --no-restore \
---no-save -e \
-'devtools::install_github("crsh/papaja")'
+RUN install2.r --error \
+    tidybayes
